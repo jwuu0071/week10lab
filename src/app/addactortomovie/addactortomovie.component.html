@@ -1,0 +1,51 @@
+<div class="section">
+  <div class="col-md-6">
+    <table class="table table-striped table-hover">
+      <thead>
+      <tr>
+        <th>Movie Title</th>
+        <th>Year</th>
+        <th>Select!</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of moviesDB">
+        <td>{{ item.title }}</td>
+        <td>{{ item.year }}</td>
+        <td>
+          <button type="submit" class="btn btn-sm btn-success" (click)="onSelectMovie(item)">Select</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-6">
+    <table class="table table-striped table-hover">
+      <thead>
+      <tr>
+        <th>Actor Name</th>
+        <th>BYear</th>
+        <th>Select!</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of actorsDB">
+        <td>{{ item.name }}</td>
+        <td>{{ item.bYear }}</td>
+        <td>
+          <button type="submit" class="btn btn-sm btn-success" (click)="onSelectActor(item)">Select</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="form-group py-2">
+    <label for="movieTitle">Movie Title</label>
+    <input type="text" class="form-control" id="movieTitle" [(ngModel)]="title"/>
+  </div>
+  <div class="form-group py-2">
+    <label for="fullName">Actor Name</label>
+    <input type="text" class="form-control" id="fullName" [(ngModel)]="fullName"/>
+  </div>
+  <button type="submit" class="btn btn-success mt-4" (click)="onAddActorToMovie()">Add</button>
+</div>
